@@ -3,8 +3,9 @@ language: bash
 sudo: true
 
 install:
+- curl -sLo - http://j.mp/install-travis-docker | sh -xe
 - lsb_release -a
-- sh -xe install.sh
+  #- sh -xe install.sh
 
 script:
 - ./run "docker version && docker info"
