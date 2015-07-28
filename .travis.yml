@@ -1,0 +1,10 @@
+sudo: true
+
+install:
+- lsb_release -a
+- sh -xe install.sh
+
+script:
+- ./run "docker version && docker info"
+- ./run docker run ubuntu /bin/echo hello world
+- apt-get update && apt-get install qemu-user-static 
