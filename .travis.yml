@@ -4,7 +4,7 @@ services:
 language: bash
 script:
 # prepare qemu
- - docker ino
+ - docker info
  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
  - docker pull hypriot/rpi-alpine-scratch
  - docker run -t --name rpi-mqtt hypriot/rpi-alpine-scratch sh -c 'apk update && apk add mosquitto-clients'
